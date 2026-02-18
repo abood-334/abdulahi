@@ -20,15 +20,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: [https://github.com/abood-334/abdulahi.git]/package-lock.json
+          cache-dependency-path: my-docusaurus-site/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: [https://github.com/abood-334/abdulahi.git]
-
+        working-directory: my-docusaurus-site
       - name: Build website
         run: npm run build
-        working-directory: [https://github.com/abood-334/abdulahi.git]
+        working-directory: my-docusaurus-site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
